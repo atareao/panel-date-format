@@ -2,9 +2,9 @@
     "description": "Allows to customize the date format on the panel.",
     "name": "Panel Date Format",
     "shell-version": ["3.36"],
-    "url": "https://github.com/KEIII/gnome-shell-panel-date-format",
+    "url": "https://github.com/atareao/gnome-shell-panel-date-format",
     "uuid": "panel-date-format@atareao.es",
     "gettext-domain": "disk-space-usage@atareao.es",
     "settings-schema": "es.atareao.panel-date-format",
-    "version": 1
+    "version": 2
 }

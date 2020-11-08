@@ -117,24 +117,86 @@ var PanelDateFOrmatPreferencesWidget = GObject.registerClass(
             var settings = Convenience.getSettings();
             let appearanceSection = preferencesPage.addSection(
                 _("Select options"), null, {});
-            appearanceSection.addGSetting(settings, "format");
-        let aboutPage = this.addPage(
-            "about",
-            _("About"),
-            { vscrollbar_policy: Gtk.PolicyType.NEVER }
-        );
-        aboutPage.box.add(new AboutWidget());
-        aboutPage.box.margin_top = 18;
+
+            this.format = new PreferencesWidget.StringSetting(settings, 'format');
+            let key = settings.settings_schema.get_key('format');
+            appearanceSection.addSetting(
+                key.get_summary(),
+                key.get_description(),
+                this.format);
+
+            let infoSection = preferencesPage.addSection(
+                _("Information"), null, {});
+            let url = "https://lazka.github.io/pgi-docs/#GLib-2.0/classes/DateTime.html#GLib.DateTime.format";
+            infoSection.addSetting(
+                _("Syntax"),
+                url,
+                Gtk.LinkButton.new_with_label(url, _('Date time format'))
+            );
+            let date = GLib.DateTime.new_now_local();
+            let button1 = Gtk.Button.new_with_label(_('Set'));
+            this._createSample(infoSection, date,
+                               _('The preferred date and time representation for the current locale'),
+                               '%c');
+            this._createSample(infoSection, date,
+                               _('The preferred date representation for the current locale without the time'),
+                               '%x');
+            this._createSample(infoSection, date,
+                               _('The preferred time representation for the current locale without the date'),
+                               '%X');
+            this._createSample(infoSection, date,
+                               _('Day, month and hour'),
+                               '%A, %e de %B %R');
+            this._createSample(infoSection, date,
+                               _('the number of seconds since the Epoch'),
+                               '%s');
+            this._createSample(infoSection, date,
+                               _('The time in 24-hour notation with seconds'),
+                               '%H:%M:%S');
+            this._createSample(infoSection, date,
+                               _('The time in 24-hour notation'),
+                               '%R');
+
+            let aboutPage = this.addPage(
+                "about",
+                _("About"),
+                { vscrollbar_policy: Gtk.PolicyType.NEVER }
+            );
+            aboutPage.box.add(new AboutWidget());
+            aboutPage.box.margin_top = 18;
+        }
+
+        _createSample(section, date, text, format){
+            let button = Gtk.Button.new_with_label(format);
+            section.addSetting(
+                text,
+                date.format(format),
+                button
+            );
+            button.connect('clicked', ()=>{
+                this.format.set_text(format);
+            });
+        }
     }
-}
 );
 
+function center(window){
+    let defaultDisplay = Gdk.Display.get_default();
+    let monitor = defaultDisplay.get_primary_monitor();
+    let scale = monitor.get_scale_factor();
+    let monitor_width = monitor.get_geometry().width / scale;
+    let monitor_height = monitor.get_geometry().height / scale;
+    let width = window.get_preferred_width()[0];
+    let height = window.get_preferred_height()[0];
+    window.move((monitor_width - width)/2, (monitor_height - height)/2);
+}
+
 function buildPrefsWidget() {
-    log('disk-space-usage: init');
     let preferencesWidget = new PanelDateFOrmatPreferencesWidget();
     GLib.timeout_add(GLib.PRIORITY_DEFAULT, 0, () => {
         let prefsWindow = preferencesWidget.get_toplevel()
         prefsWindow.get_titlebar().custom_title = preferencesWidget.switcher;
+        center(prefsWindow);
         prefsWindow.connect("destroy", () => {
             preferencesWidget.daemon.discovering = false;
         });

@@ -4,7 +4,7 @@
     <key type="s" name="format"> 
         <default>"%A, %e de %B %R"</default>
             <summary>Format</summary>
-            <description>Format for the clock. Syntax https://developer.gnome.org/glib/stable/glib-GDateTime.html#g-date-time-format</description>
+            <description>Format for the clock</description>
         </key>
     </schema>
 </schemalist>

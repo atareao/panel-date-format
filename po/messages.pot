@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-20 20:14+0200\n"
+"POT-Creation-Date: 2020-11-08 20:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,20 +22,18 @@ msgid "Format"
 msgstr ""
 
 #: schemas/es.atareao.panel-date-format.gschema.xml:7
-msgid ""
-"Format for the clock. Syntax https://developer.gnome.org/glib/stable/glib-"
-"GDateTime.html#g-date-time-format"
+msgid "Format for the clock"
 msgstr ""
 
-#: preferenceswidget.js:216
+#: preferenceswidget.js:231
 msgid "Nothing"
 msgstr ""
 
-#: preferenceswidget.js:229
+#: preferenceswidget.js:244
 msgid "True"
 msgstr ""
 
-#: preferenceswidget.js:242
+#: preferenceswidget.js:257
 msgid "False"
 msgstr ""
 
@@ -99,6 +97,52 @@ msgstr ""
 msgid "Select options"
 msgstr ""
 
-#: prefs.js:123
+#: prefs.js:129
+msgid "Information"
+msgstr ""
+
+#: prefs.js:132
+msgid "Syntax"
+msgstr ""
+
+#: prefs.js:134
+msgid "Date time format"
+msgstr ""
+
+#: prefs.js:137
+msgid "Set"
+msgstr ""
+
+#: prefs.js:139
+msgid "The preferred date and time representation for the current locale"
+msgstr ""
+
+#: prefs.js:142
+msgid ""
+"The preferred date representation for the current locale without the time"
+msgstr ""
+
+#: prefs.js:145
+msgid ""
+"The preferred time representation for the current locale without the date"
+msgstr ""
+
+#: prefs.js:148
+msgid "Day, month and hour"
+msgstr ""
+
+#: prefs.js:151
+msgid "the number of seconds since the Epoch"
+msgstr ""
+
+#: prefs.js:154
+msgid "The time in 24-hour notation with seconds"
+msgstr ""
+
+#: prefs.js:157
+msgid "The time in 24-hour notation"
+msgstr ""
+
+#: prefs.js:162
 msgid "About"
 msgstr ""
