@@ -28,54 +28,51 @@ const ExtensionUtils = imports.misc.extensionUtils;
 const Extension = ExtensionUtils.getCurrentExtension();
 const Convenience = Extension.imports.convenience;
 
-let originalClockDisplay;
-let formatClockDisplay;
-let settings;
-let timeoutID = 0;
-let format;
-
-/**
- * Initialising function which will be invoked at most once directly after your source JS file is loaded.
- */
-
-function setFormat(){
-    if (!settings.get_string('format')) {
-        format = '%Y.%m.%d %H:%M';
-    }else{
-        format = settings.get_string('format');
+class CustomClockDisplay{
+    constructor(){
+        this._originalClockDisplay = main.panel.statusArea.dateMenu._clockDisplay;
+        this._formatClockDisplay = new St.Label({
+            y_align: Clutter.ActorAlign.CENTER,
+        });
+        this._settings = ExtensionUtils.getSettings();
+        this._setting.connect('changed', this._setFormat.bind(this));
+        this._setFormat();
+        this._timeoutID = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, ()=>{
+            this._formatClockDisplay.set_text(
+                GLib.DateTime.new_now_local().format(this._format));
+            return true;
+        });
     }
+
+    _setFormat(){
+        if (!this._settings.get_string('format')) {
+            this._format = '%Y.%m.%d %H:%M';
+        }else{
+            this._format = this._settings.get_string('format');
+        }
+    }
+
+    disable(){
+        if(this._timeoutID > 0){
+            GLib.Source.remove(this._timeoutID);
+            this._timeoutID = 0;
+        }
+        this._originalClockDisplay.get_parent().remove_child(
+            this._formatClockDisplay);
+        this._originalClockDisplay.show();
+
 }
 
+let customClockDisplay;
+
 function init() {
-    originalClockDisplay = main.panel.statusArea.dateMenu._clockDisplay;
-    formatClockDisplay = new St.Label({
-        y_align: Clutter.ActorAlign.CENTER,
-    });
-    settings = Convenience.getSettings();
-    setFormat();
-    settings.connect('changed', setFormat);
+    Convenience.initTranslations();
 }
 
 function enable() {
-    originalClockDisplay.hide();
-    originalClockDisplay.get_parent().insert_child_below(formatClockDisplay, originalClockDisplay);
-    if(timeoutID > 0){
-        GLib.Source.remove(timeoutID);
-        timeoutID = 0;
-    }
-    timeoutID = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, tick);
+    customClockDisplay = new CustomClockDisplay();
 }
 
 function disable() {
-    if(timeoutID > 0){
-        GLib.Source.remove(timeoutID);
-        timeoutID = 0;
-    }
-    originalClockDisplay.get_parent().remove_child(formatClockDisplay);
-    originalClockDisplay.show();
-}
-
-function tick() {
-    formatClockDisplay.set_text(GLib.DateTime.new_now_local().format(format));
-    return true;
+    customClockDisplay.disable();
 }
