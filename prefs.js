@@ -25,14 +25,12 @@
 const {GLib, GObject, Gio, Gtk, Gdk} = imports.gi; 
 const ExtensionUtils = imports.misc.extensionUtils;
 const Extension = ExtensionUtils.getCurrentExtension();
-const Convenience = Extension.imports.convenience;
 const PreferencesWidget = Extension.imports.preferenceswidget;
 const Gettext = imports.gettext.domain(Extension.uuid);
 const _ = Gettext.gettext;
 
-
-function init() {
-    Convenience.initTranslations();
+function init(){
+    ExtensionUtils.initTranslations();
 }
 
 var AboutWidget = GObject.registerClass(
@@ -110,7 +108,7 @@ var PanelDateFOrmatPreferencesWidget = GObject.registerClass(
             let preferencesPage = new PreferencesWidget.Page();
             this.add_titled(preferencesPage, "preferences", _("Preferences"));
 
-            var settings = Convenience.getSettings();
+            var settings = ExtensionUtils.getSettings();
             let appearanceSection = preferencesPage.addSection(
                 _("Select options"), null, {});
 

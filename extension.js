@@ -68,7 +68,6 @@ class CustomClockDisplay{
 let customClockDisplay;
 
 function init() {
-    ExtensionUtils.initTranslations();
 }
 
 function enable() {

@@ -4,7 +4,7 @@
     "shell-version": ["3.36"],
     "url": "https://github.com/atareao/gnome-shell-panel-date-format",
     "uuid": "panel-date-format@atareao.es",
-    "gettext-domain": "disk-space-usage@atareao.es",
+    "gettext-domain": "panel-date-format@atareao.es",
     "settings-schema": "es.atareao.panel-date-format",
     "version": 3
 }
