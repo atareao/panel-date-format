@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Panel Date Format - 1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-08 20:37+0100\n"
+"POT-Creation-Date: 2020-11-13 19:53+0100\n"
 "PO-Revision-Date: 2020-08-20 19:50+0200\n"
 "Last-Translator: Lorenzo <lorenzo.carbonell.cerezo@gmail.com>\n"
 "Language-Team: Spanish\n"
@@ -37,114 +37,112 @@ msgstr "Cierto"
 msgid "False"
 msgstr "Falso"
 
-#: prefs.js:60
+#: prefs.js:56
 msgid "Panel Date Format"
 msgstr "Formato de fecha del panel"
 
-#: prefs.js:65
+#: prefs.js:61
 msgid "Version: "
 msgstr "Versión: "
 
-#: prefs.js:76
+#: prefs.js:72
 msgid "Atareao"
 msgstr ""
 
-#: prefs.js:83
+#: prefs.js:79
 msgid "Copyright © 2020 Lorenzo Carbonell"
 msgstr ""
 
-#: prefs.js:90
+#: prefs.js:86
 msgid ""
 "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS "
 "OR\n"
 msgstr ""
 
-#: prefs.js:91
+#: prefs.js:87
 msgid ""
 "IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"
 msgstr ""
 
-#: prefs.js:92
+#: prefs.js:88
 msgid ""
 "FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"
 msgstr ""
 
-#: prefs.js:93
+#: prefs.js:89
 msgid ""
 "AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"
 msgstr ""
 
-#: prefs.js:94
+#: prefs.js:90
 msgid ""
 "LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\n"
 msgstr ""
 
-#: prefs.js:95
+#: prefs.js:91
 msgid ""
 "FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER "
 "DEALINGS\n"
 msgstr ""
 
-#: prefs.js:96
+#: prefs.js:92
 msgid "IN THE SOFTWARE.\n"
 msgstr ""
 
-#: prefs.js:115
+#: prefs.js:111
 msgid "Preferences"
 msgstr "Preferencia"
 
-#: prefs.js:119
+#: prefs.js:115
 msgid "Select options"
 msgstr "Selecciona opciones"
 
-#: prefs.js:129
+#: prefs.js:125
 msgid "Information"
 msgstr "Información"
 
-#: prefs.js:132
+#: prefs.js:128
 msgid "Syntax"
 msgstr "Sintaxis"
 
-#: prefs.js:134
+#: prefs.js:130
 msgid "Date time format"
 msgstr "Formato de fecha"
 
-#: prefs.js:137
+#: prefs.js:133
 msgid "Set"
 msgstr "Fije"
 
-#: prefs.js:139
+#: prefs.js:135
 msgid "The preferred date and time representation for the current locale"
 msgstr "La representación preferida para hora y fecha"
 
-#: prefs.js:142
+#: prefs.js:138
 msgid ""
 "The preferred date representation for the current locale without the time"
-msgstr ""
-"La representación preferida para la fecha"
+msgstr "La representación preferida para la fecha"
 
-#: prefs.js:145
+#: prefs.js:141
 msgid ""
 "The preferred time representation for the current locale without the date"
-msgstr ""
-"La representación preferida para la hora"
+msgstr "La representación preferida para la hora"
 
-#: prefs.js:148
+#: prefs.js:144
 msgid "Day, month and hour"
 msgstr "Día, mes y hora"
 
-#: prefs.js:151
+#: prefs.js:147
 msgid "the number of seconds since the Epoch"
 msgstr "El número de segundos desde la época"
 
-#: prefs.js:154
+#: prefs.js:150
 msgid "The time in 24-hour notation with seconds"
 msgstr "La hora en notación de 24 horas con segundos"
 
-#: prefs.js:157
+#: prefs.js:153
 msgid "The time in 24-hour notation"
 msgstr "La hora en notación de 24 horas"
 
-#: prefs.js:162
+#: prefs.js:158
 msgid "About"
 msgstr "Acerca de"
