@@ -25,8 +25,6 @@
 const {GLib, St, Clutter} = imports.gi;
 const main = imports.ui.main;
 const ExtensionUtils = imports.misc.extensionUtils;
-const Extension = ExtensionUtils.getCurrentExtension();
-const Convenience = Extension.imports.convenience;
 
 class CustomClockDisplay{
     constructor(){
@@ -35,8 +33,12 @@ class CustomClockDisplay{
             y_align: Clutter.ActorAlign.CENTER,
         });
         this._settings = ExtensionUtils.getSettings();
-        this._setting.connect('changed', this._setFormat.bind(this));
+        this._settings.connect('changed', this._setFormat.bind(this));
         this._setFormat();
+        this._originalClockDisplay.hide();
+        this._originalClockDisplay.get_parent().insert_child_below(
+            this._formatClockDisplay,
+            this._originalClockDisplay);
         this._timeoutID = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, ()=>{
             this._formatClockDisplay.set_text(
                 GLib.DateTime.new_now_local().format(this._format));
@@ -60,13 +62,13 @@ class CustomClockDisplay{
         this._originalClockDisplay.get_parent().remove_child(
             this._formatClockDisplay);
         this._originalClockDisplay.show();
-
+    }
 }
 
 let customClockDisplay;
 
 function init() {
-    Convenience.initTranslations();
+    ExtensionUtils.initTranslations();
 }
 
 function enable() {

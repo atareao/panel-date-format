@@ -22,11 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-const GLib = imports.gi.GLib;
-const GObject = imports.gi.GObject;
-const Gio = imports.gi.Gio;
-const Gtk = imports.gi.Gtk;
-
+const {GLib, GObject, Gio, Gtk, Gdk} = imports.gi; 
 const ExtensionUtils = imports.misc.extensionUtils;
 const Extension = ExtensionUtils.getCurrentExtension();
 const Convenience = Extension.imports.convenience;
@@ -197,9 +193,6 @@ function buildPrefsWidget() {
         let prefsWindow = preferencesWidget.get_toplevel()
         prefsWindow.get_titlebar().custom_title = preferencesWidget.switcher;
         center(prefsWindow);
-        prefsWindow.connect("destroy", () => {
-            preferencesWidget.daemon.discovering = false;
-        });
         return false;
     });
     preferencesWidget.show_all();
