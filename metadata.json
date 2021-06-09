@@ -6,5 +6,5 @@
     "uuid": "panel-date-format@atareao.es",
     "gettext-domain": "panel-date-format@atareao.es",
     "settings-schema": "es.atareao.panel-date-format",
-    "version": 3
+    "version": 4
 }
