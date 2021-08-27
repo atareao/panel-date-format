@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="48"
+   width="48"
+   id="svg4"
+   version="1.1"
+   viewBox="0 0 48 48"
+   role="img"
+   class="svg-inline--fa fa-telegram-plane fa-w-14"
+   data-icon="telegram-plane"
+   data-prefix="fab"
+   aria-hidden="true"
+   sodipodi:docname="telegram.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     inkscape:document-rotation="0"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     id="namedview5614"
+     showgrid="false"
+     inkscape:zoom="11.185185"
+     inkscape:cx="4.9172186"
+     inkscape:cy="26.284769"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4"
+     inkscape:pagecheckerboard="0" />
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <path
+     style="fill:#0088cc;fill-opacity:1;stroke-width:0.102688"
+     id="path2"
+     d="M 46.868934,8.2232112 39.927235,40.960068 c -0.523713,2.310471 -1.889442,2.885517 -3.830258,1.797024 l -10.576832,-7.794001 -5.103568,4.908484 c -0.564779,0.56478 -1.037161,1.03714 -2.125633,1.03714 L 19.050827,30.136779 38.653905,12.423145 c 0.852323,-0.759883 -0.184838,-1.180912 -1.324663,-0.421028 L 13.094936,27.261508 2.6618553,23.99605 C 0.39247103,23.287499 0.35138503,21.726646 3.1342367,20.638153 L 43.942331,4.9166671 c 1.889442,-0.7085513 3.542715,0.4210281 2.926603,3.3065441 z" />
+</svg>
