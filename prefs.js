@@ -23,85 +23,23 @@
  */
 
 const {GLib, GObject, Gio, Gtk, Gdk} = imports.gi; 
-const ExtensionUtils = imports.misc.extensionUtils;
-const Extension = ExtensionUtils.getCurrentExtension();
-const PreferencesWidget = Extension.imports.preferenceswidget;
+const Extension = imports.misc.extensionUtils.getCurrentExtension();
+const Convenience = Extension.imports.convenience;
+const Widgets = Extension.imports.preferenceswidget;
+const AboutPage = Extension.imports.aboutpage.AboutPage;
 const Gettext = imports.gettext.domain(Extension.uuid);
 const _ = Gettext.gettext;
 
 function init(){
-    ExtensionUtils.initTranslations();
+    Convenience.initTranslations();
 }
 
-var AboutWidget = GObject.registerClass(
-    class AboutWidget extends Gtk.Grid{
-        _init(settings) {
-            super._init({
-                margin_bottom: 18,
-                row_spacing: 8,
-                hexpand: true,
-                halign: Gtk.Align.CENTER,
-                orientation: Gtk.Orientation.VERTICAL
-            });
-
-            let aboutIcon = new Gtk.Image({
-                icon_name: "panel-date-format",
-                pixel_size: 128
-            });
-            this.add(aboutIcon);
-
-            let aboutName = new Gtk.Label({
-                label: "<b>" + _("Panel Date Format") + "</b>",
-                use_markup: true
-            });
-            this.add(aboutName);
-
-            let aboutVersion = new Gtk.Label({ label: _('Version: ') + Extension.metadata.version.toString() });
-            this.add(aboutVersion);
-
-            let aboutDescription = new Gtk.Label({
-                label:  Extension.metadata.description
-            });
-            this.add(aboutDescription);
-
-            let aboutWebsite = new Gtk.Label({
-                label: '<a href="%s">%s</a>'.format(
-                    Extension.metadata.url,
-                    _("Atareao")
-                ),
-                use_markup: true
-            });
-            this.add(aboutWebsite);
-
-            let aboutCopyright = new Gtk.Label({
-                label: "<small>" + _('Copyright © 2020 Lorenzo Carbonell') + "</small>",
-                use_markup: true
-            });
-            this.add(aboutCopyright);
-
-            let aboutLicense = new Gtk.Label({
-                label: "<small>" +
-                _("THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\n") + 
-                _("IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n") + 
-                _("FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n") + 
-                _("AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n") + 
-                _("LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\n") + 
-                _("FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS\n") + 
-                _("IN THE SOFTWARE.\n") + 
-                "</small>",
-                use_markup: true,
-                justify: Gtk.Justification.CENTER
-            });
-            this.add(aboutLicense);
-        }
-    }
-);
-
 var PanelDateFOrmatPreferencesWidget = GObject.registerClass(
-    class PanelDateFOrmatPreferencesWidget extends PreferencesWidget.Stack{
-        _init(settings){
-            super._init();
+    class PanelDateFOrmatPreferencesWidget extends Widgets.ListWithStack{
+        _init(){
+            super._init({});
 
+            /*
             let theme = Gtk.IconTheme.get_default();
             if (theme == null) {
                 // Workaround due to lazy initialization on wayland
@@ -109,23 +47,24 @@ var PanelDateFOrmatPreferencesWidget = GObject.registerClass(
                 theme = new Gtk.IconTheme();
                 theme.set_custom_theme(St.Settings.get().gtk_icon_theme);
             }
+            */
 
-            let preferencesPage = new PreferencesWidget.Page();
-            this.add_titled(preferencesPage, "preferences", _("Preferences"));
+            var settings = Convenience.getSettings();
+            let preferencesPage = new Widgets.Page();
 
-            var settings = ExtensionUtils.getSettings();
-            let appearanceSection = preferencesPage.addSection(
-                _("Select options"), null, {});
+            let appearanceSection = preferencesPage.addFrame(
+                _("Select options"));
 
-            this.format = new PreferencesWidget.StringSetting(settings, 'format');
+            this.format = new Widgets.StringSetting(settings, 'format');
             let key = settings.settings_schema.get_key('format');
             appearanceSection.addSetting(
                 key.get_summary(),
                 key.get_description(),
                 this.format);
 
-            let infoSection = preferencesPage.addSection(
-                _("Information"), null, {});
+            let infoSection = preferencesPage.addFrame(
+                _("Information"));
+
             let url = "https://lazka.github.io/pgi-docs/#GLib-2.0/classes/DateTime.html#GLib.DateTime.format";
             infoSection.addSetting(
                 _("Syntax"),
@@ -156,13 +95,9 @@ var PanelDateFOrmatPreferencesWidget = GObject.registerClass(
                                _('The time in 24-hour notation'),
                                '%R');
 
-            let aboutPage = this.addPage(
-                "about",
-                _("About"),
-                { vscrollbar_policy: Gtk.PolicyType.NEVER }
-            );
-            aboutPage.box.add(new AboutWidget());
-            aboutPage.box.margin_top = 18;
+            this.add(_("Panel Date Format Preferences"), "preferences-other-symbolic",
+                preferencesPage);
+            this.add(_("About"), "help-about-symbolic", new AboutPage());
         }
 
         _createSample(section, date, text, format){
@@ -179,25 +114,13 @@ var PanelDateFOrmatPreferencesWidget = GObject.registerClass(
     }
 );
 
-function center(window){
-    let defaultDisplay = Gdk.Display.get_default();
-    let monitor = defaultDisplay.get_primary_monitor();
-    let scale = monitor.get_scale_factor();
-    let monitor_width = monitor.get_geometry().width / scale;
-    let monitor_height = monitor.get_geometry().height / scale;
-    let width = window.get_preferred_width()[0];
-    let height = window.get_preferred_height()[0];
-    window.move((monitor_width - width)/2, (monitor_height - height)/2);
-}
-
 function buildPrefsWidget() {
     let preferencesWidget = new PanelDateFOrmatPreferencesWidget();
-    GLib.timeout_add(GLib.PRIORITY_DEFAULT, 0, () => {
-        let prefsWindow = preferencesWidget.get_toplevel()
-        prefsWindow.get_titlebar().custom_title = preferencesWidget.switcher;
-        center(prefsWindow);
-        return false;
+    preferencesWidget.connect("realize", ()=>{
+        const window = preferencesWidget.get_root();
+        window.set_title(_("Panel Date Format Configuration"));
+        window.default_height = 800;
+        window.default_width = 850;
     });
-    preferencesWidget.show_all();
     return preferencesWidget;
 }

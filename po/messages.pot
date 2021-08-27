@@ -8,13 +8,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-13 20:08+0100\n"
+"POT-Creation-Date: 2021-08-27 06:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: schemas/es.atareao.panel-date-format.gschema.xml:6
@@ -25,124 +25,164 @@ msgstr ""
 msgid "Format for the clock"
 msgstr ""
 
-#: preferenceswidget.js:231
-msgid "Nothing"
+#: dialogwidgets.js:55
+msgid "Cancel"
 msgstr ""
 
-#: preferenceswidget.js:244
-msgid "True"
+#: dialogwidgets.js:56
+msgid "Ok"
 msgstr ""
 
-#: preferenceswidget.js:257
-msgid "False"
+#: aboutpage.js:47
+msgid "Buy me a coffee"
 msgstr ""
 
-#: prefs.js:54
-msgid "Panel Date Format"
+#: aboutpage.js:52
+msgid "Version"
 msgstr ""
 
-#: prefs.js:59
-msgid "Version: "
+#: aboutpage.js:54
+msgid "GNOME Version"
 msgstr ""
 
-#: prefs.js:70
-msgid "Atareao"
+#: aboutpage.js:56
+msgid "OS"
 msgstr ""
 
-#: prefs.js:77
-msgid "Copyright © 2020 Lorenzo Carbonell"
+#: aboutpage.js:57
+msgid "SessionType"
 msgstr ""
 
-#: prefs.js:84
-msgid ""
-"THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS "
-"OR\n"
+#: aboutpage.js:89
+msgid "Developers"
 msgstr ""
 
-#: prefs.js:85
-msgid ""
-"IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\n"
+#: aboutpage.js:96
+msgid "Contributors"
 msgstr ""
 
-#: prefs.js:86
-msgid ""
-"FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\n"
+#: aboutpage.js:97
+msgid "Thank you to all contributors!"
 msgstr ""
 
-#: prefs.js:87
-msgid ""
-"AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\n"
+#: aboutpage.js:98
+msgid "For a list of all contributors, please visit"
 msgstr ""
 
-#: prefs.js:88
-msgid ""
-"LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING\n"
+#: aboutpage.js:107
+msgid "Supporters"
 msgstr ""
 
-#: prefs.js:89
-msgid ""
-"FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER "
-"DEALINGS\n"
+#: aboutpage.js:108
+msgid "Thank you to all supporters!"
 msgstr ""
 
-#: prefs.js:90
-msgid "IN THE SOFTWARE.\n"
+#: aboutpage.js:109
+msgid "For a list of all supporters, please visit"
 msgstr ""
 
-#: prefs.js:109
-msgid "Preferences"
+#: aboutpage.js:116
+msgid "License"
 msgstr ""
 
-#: prefs.js:113
+#: aboutpage.js:129
+msgid "More info"
+msgstr ""
+
+#: aboutpage.js:139
+msgid "More information"
+msgstr ""
+
+#: aboutpage.js:142
+msgid "Report an issue"
+msgstr ""
+
+#: prefs.js:56
 msgid "Select options"
 msgstr ""
 
-#: prefs.js:123
+#: prefs.js:66
 msgid "Information"
 msgstr ""
 
-#: prefs.js:126
+#: prefs.js:70
 msgid "Syntax"
 msgstr ""
 
-#: prefs.js:128
+#: prefs.js:72
 msgid "Date time format"
 msgstr ""
 
-#: prefs.js:131
+#: prefs.js:75
 msgid "Set"
 msgstr ""
 
-#: prefs.js:133
+#: prefs.js:77
 msgid "The preferred date and time representation for the current locale"
 msgstr ""
 
-#: prefs.js:136
+#: prefs.js:80
 msgid ""
 "The preferred date representation for the current locale without the time"
 msgstr ""
 
-#: prefs.js:139
+#: prefs.js:83
 msgid ""
 "The preferred time representation for the current locale without the date"
 msgstr ""
 
-#: prefs.js:142
+#: prefs.js:86
 msgid "Day, month and hour"
 msgstr ""
 
-#: prefs.js:145
+#: prefs.js:89
 msgid "the number of seconds since the Epoch"
 msgstr ""
 
-#: prefs.js:148
+#: prefs.js:92
 msgid "The time in 24-hour notation with seconds"
 msgstr ""
 
-#: prefs.js:151
+#: prefs.js:95
 msgid "The time in 24-hour notation"
 msgstr ""
 
-#: prefs.js:156
+#: prefs.js:98
+msgid "Panel Date Format Preferences"
+msgstr ""
+
+#: prefs.js:100
 msgid "About"
+msgstr ""
+
+#: prefs.js:121
+msgid "Panel Date Format Configuration"
+msgstr ""
+
+#: preferenceswidget.js:224
+msgid "Nothing"
+msgstr ""
+
+#: preferenceswidget.js:237
+msgid "True"
+msgstr ""
+
+#: preferenceswidget.js:250
+msgid "False"
+msgstr ""
+
+#: preferenceswidget.js:444 preferenceswidget.js:986
+msgid "Edit"
+msgstr ""
+
+#: preferenceswidget.js:491 preferenceswidget.js:509 preferenceswidget.js:539
+msgid "Name"
+msgstr ""
+
+#: preferenceswidget.js:497 preferenceswidget.js:509 preferenceswidget.js:539
+msgid "Service"
+msgstr ""
+
+#: preferenceswidget.js:996
+msgid "Remove"
 msgstr ""
