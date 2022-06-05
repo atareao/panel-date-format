@@ -119,7 +119,7 @@ function buildPrefsWidget() {
     preferencesWidget.connect("realize", ()=>{
         const window = preferencesWidget.get_root();
         window.set_title(_("Panel Date Format Configuration"));
-        window.default_height = 800;
+        window.default_height = 850;
         window.default_width = 850;
     });
     return preferencesWidget;
