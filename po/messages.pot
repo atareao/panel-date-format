@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-27 06:45+0200\n"
+"POT-Creation-Date: 2022-06-05 12:04+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,70 +31,6 @@ msgstr ""
 
 #: dialogwidgets.js:56
 msgid "Ok"
-msgstr ""
-
-#: aboutpage.js:47
-msgid "Buy me a coffee"
-msgstr ""
-
-#: aboutpage.js:52
-msgid "Version"
-msgstr ""
-
-#: aboutpage.js:54
-msgid "GNOME Version"
-msgstr ""
-
-#: aboutpage.js:56
-msgid "OS"
-msgstr ""
-
-#: aboutpage.js:57
-msgid "SessionType"
-msgstr ""
-
-#: aboutpage.js:89
-msgid "Developers"
-msgstr ""
-
-#: aboutpage.js:96
-msgid "Contributors"
-msgstr ""
-
-#: aboutpage.js:97
-msgid "Thank you to all contributors!"
-msgstr ""
-
-#: aboutpage.js:98
-msgid "For a list of all contributors, please visit"
-msgstr ""
-
-#: aboutpage.js:107
-msgid "Supporters"
-msgstr ""
-
-#: aboutpage.js:108
-msgid "Thank you to all supporters!"
-msgstr ""
-
-#: aboutpage.js:109
-msgid "For a list of all supporters, please visit"
-msgstr ""
-
-#: aboutpage.js:116
-msgid "License"
-msgstr ""
-
-#: aboutpage.js:129
-msgid "More info"
-msgstr ""
-
-#: aboutpage.js:139
-msgid "More information"
-msgstr ""
-
-#: aboutpage.js:142
-msgid "Report an issue"
 msgstr ""
 
 #: prefs.js:56
@@ -159,30 +95,94 @@ msgstr ""
 msgid "Panel Date Format Configuration"
 msgstr ""
 
-#: preferenceswidget.js:224
+#: preferenceswidget.js:247
 msgid "Nothing"
 msgstr ""
 
-#: preferenceswidget.js:237
+#: preferenceswidget.js:260
 msgid "True"
 msgstr ""
 
-#: preferenceswidget.js:250
+#: preferenceswidget.js:273
 msgid "False"
 msgstr ""
 
-#: preferenceswidget.js:444 preferenceswidget.js:986
+#: preferenceswidget.js:467 preferenceswidget.js:998
 msgid "Edit"
 msgstr ""
 
-#: preferenceswidget.js:491 preferenceswidget.js:509 preferenceswidget.js:539
+#: preferenceswidget.js:514 preferenceswidget.js:532 preferenceswidget.js:561
 msgid "Name"
 msgstr ""
 
-#: preferenceswidget.js:497 preferenceswidget.js:509 preferenceswidget.js:539
+#: preferenceswidget.js:520 preferenceswidget.js:532 preferenceswidget.js:561
 msgid "Service"
 msgstr ""
 
-#: preferenceswidget.js:996
+#: preferenceswidget.js:1008
 msgid "Remove"
+msgstr ""
+
+#: aboutpage.js:47
+msgid "Buy me a coffee"
+msgstr ""
+
+#: aboutpage.js:52
+msgid "Version"
+msgstr ""
+
+#: aboutpage.js:54
+msgid "GNOME Version"
+msgstr ""
+
+#: aboutpage.js:56
+msgid "OS"
+msgstr ""
+
+#: aboutpage.js:57
+msgid "SessionType"
+msgstr ""
+
+#: aboutpage.js:89
+msgid "Developers"
+msgstr ""
+
+#: aboutpage.js:96
+msgid "Contributors"
+msgstr ""
+
+#: aboutpage.js:97
+msgid "Thank you to all contributors!"
+msgstr ""
+
+#: aboutpage.js:98
+msgid "For a list of all contributors, please visit"
+msgstr ""
+
+#: aboutpage.js:107
+msgid "Supporters"
+msgstr ""
+
+#: aboutpage.js:108
+msgid "Thank you to all supporters!"
+msgstr ""
+
+#: aboutpage.js:109
+msgid "For a list of all supporters, please visit"
+msgstr ""
+
+#: aboutpage.js:116
+msgid "License"
+msgstr ""
+
+#: aboutpage.js:129
+msgid "More info"
+msgstr ""
+
+#: aboutpage.js:139
+msgid "More information"
+msgstr ""
+
+#: aboutpage.js:142
+msgid "Report an issue"
 msgstr ""
