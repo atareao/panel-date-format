@@ -76,4 +76,6 @@ function enable() {
 
 function disable() {
     customClockDisplay.disable();
+    customClockDisplay.destroy();
+    customClockDisplay = null;
 }

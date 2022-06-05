@@ -22,16 +22,16 @@
  * IN THE SOFTWARE.
  */
 
-const {GLib, GObject, Gio, Gtk, Gdk} = imports.gi; 
-const Extension = imports.misc.extensionUtils.getCurrentExtension();
-const Convenience = Extension.imports.convenience;
+const {GLib, GObject, Gio, Gtk, Gdk} = imports.gi;
+const ExtensionUtils = imports.misc.extensionUtils;
+const Extension = ExtensionUtils.getCurrentExtension();
 const Widgets = Extension.imports.preferenceswidget;
 const AboutPage = Extension.imports.aboutpage.AboutPage;
 const Gettext = imports.gettext.domain(Extension.uuid);
 const _ = Gettext.gettext;
 
 function init(){
-    Convenience.initTranslations();
+    ExtensionUtils.initTranslations();
 }
 
 var PanelDateFOrmatPreferencesWidget = GObject.registerClass(
@@ -49,7 +49,7 @@ var PanelDateFOrmatPreferencesWidget = GObject.registerClass(
             }
             */
 
-            var settings = Convenience.getSettings();
+            var settings = ExtensionUtils.getSettings();
             let preferencesPage = new Widgets.Page();
 
             let appearanceSection = preferencesPage.addFrame(
