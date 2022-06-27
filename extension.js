@@ -22,7 +22,7 @@
  * IN THE SOFTWARE.
  */
 
-const {GLib, St, Clutter} = imports.gi;
+const {GLib, St, Clutter, GnomeDesktop} = imports.gi;
 const main = imports.ui.main;
 const ExtensionUtils = imports.misc.extensionUtils;
 
@@ -33,17 +33,14 @@ class CustomClockDisplay{
             y_align: Clutter.ActorAlign.CENTER,
         });
         this._settings = ExtensionUtils.getSettings();
-        this._settings.connect('changed', this._setFormat.bind(this));
-        this._setFormat();
         this._originalClockDisplay.hide();
         this._originalClockDisplay.get_parent().insert_child_below(
             this._formatClockDisplay,
             this._originalClockDisplay);
-        this._timeoutID = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 1000, ()=>{
-            this._formatClockDisplay.set_text(
-                GLib.DateTime.new_now_local().format(this._format));
-            return true;
-        });
+        this._wallClock = new GnomeDesktop.WallClock({timeOnly: true});
+        this._updateClockId = this._wallClock.connect("notify::clock", this.updateClock.bind(this));
+        this._formatChangedId = this._settings.connect("changed", this._setFormat.bind(this));
+        this._setFormat();
     }
 
     _setFormat(){
@@ -52,13 +49,24 @@ class CustomClockDisplay{
         }else{
             this._format = this._settings.get_string('format');
         }
+        this.updateClock();
     }
 
-    disable(){
-        if(this._timeoutID > 0){
-            GLib.Source.remove(this._timeoutID);
-            this._timeoutID = 0;
+    updateClock(){
+        this._formatClockDisplay.set_text(
+            GLib.DateTime.new_now_local().format(this._format));
+    }
+
+    destroy(){
+        if(this._updateClockId){
+            this._wallClock.disconnect(this._updateClockId);
+            this._updateClockId = null;
         }
+        if(this._formatChangedId){
+            this._settings.disconnect(this._formatChangedId);
+            this._formatChangedId = null;
+        }
+        this._wallClock.run_dispose();
         this._originalClockDisplay.get_parent().remove_child(
             this._formatClockDisplay);
         this._originalClockDisplay.show();
@@ -75,6 +83,6 @@ function enable() {
 }
 
 function disable() {
-    customClockDisplay.disable();
+    customClockDisplay.destroy();
     customClockDisplay = null;
 }
