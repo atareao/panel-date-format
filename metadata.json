@@ -3,10 +3,10 @@
     "extension-id": "panel-date-format@atareao.es",
     "gettext-domain": "panel-date-format@atareao.es",
     "name": "Panel Date Format",
-    "settings-schema": "es.atareao.panel-date-format",
+    "settings-schema": "org.gnome.shell.extensions.panel-date-format",
     "shell-version": ["40", "41", "42"],
     "url": "https://github.com/atareao/panel-date-format",
     "uuid": "panel-date-format@atareao.es",
     "icon": "panel-date-format",
-    "version": 4
+    "version": 8
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-05 12:04+0200\n"
+"POT-Creation-Date: 2022-06-28 07:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: schemas/es.atareao.panel-date-format.gschema.xml:6
+#: schemas/org.gnome.shell.extensions.panel-date-format.gschema.xml:6
 msgid "Format"
 msgstr ""
 
-#: schemas/es.atareao.panel-date-format.gschema.xml:7
+#: schemas/org.gnome.shell.extensions.panel-date-format.gschema.xml:7
 msgid "Format for the clock"
 msgstr ""
 
