@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="panel-date-format@atareao.es">
+    <schema path="/org/gnome/shell/extensions/panel-date-format/" id="org.gnome.shell.extensions.panel-date-format">
+    <key type="s" name="format">
+        <default>"%A, %e de %B %R"</default>
+            <summary>Format</summary>
+            <description>Format for the clock</description>
+        </key>
+    </schema>
+</schemalist>
